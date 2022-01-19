@@ -16,51 +16,51 @@ describe('Taxi Trips', function () {
         
     // });
 
-    // it('should find how many trips all the taxis made', async function () {
+    it('should find how many trips all the taxis made', async function () {
 
-    //     const taxiTrips = TaxiTrips(pool);
+        const taxiTrips = TaxiTrips(pool);
 
-    //     assert.equal(3, await taxiTrips.totalTripCount());
+        assert.equal(3, await taxiTrips.totalTripCount());
     
 
-    // });
+    });
 
-    // it('should find all the regions', async function () {
+    it('should find all the regions', async function () {
 
-    //     const taxiTrips = TaxiTrips(pool);
+        const taxiTrips = TaxiTrips(pool);
 
-    //     assert.deepStrictEqual([
-    //          {
-    //                 id: 1,
-    //                 region_name: "Gauteng"
-    //               },
-    //               {
-    //                 id: 2,
-    //                 region_name: "Cape Town"
-    //               },
-    //               {
-    //                 id: 3,
-    //                 region_name: "Durban"
-    //               }
-    //     ], await taxiTrips.findAllRegions());
+        assert.deepStrictEqual([
+             {
+                    id: 1,
+                    region_name: "Gauteng"
+                  },
+                  {
+                    id: 2,
+                    region_name: "Cape Town"
+                  },
+                  {
+                    id: 3,
+                    region_name: "Durban"
+                  }
+        ], await taxiTrips.findAllRegions());
 
-    // });
+    });
 
-    // it('should find all the taxis for a region', async function () {
-    //     const taxiTrips = TaxiTrips(pool);
-    //     assert.deepStrictEqual([
-    //         {
-    //             reg_number: 'GP 125478',
-    //             reg_number:'CY 125478',
-    //             reg_number:'NUZ 125478'
+    it('should find all the taxis for a region', async function () {
+        const taxiTrips = TaxiTrips(pool);
+        assert.deepStrictEqual([
+            {
+                reg_number: 'GP 125478',
+                reg_number:'CY 125478',
+                reg_number:'NUZ 125478'
 
-    //         }           
+            }           
 
-    // ], await taxiTrips.findTaxisForRegion(3));
-    //     // assert.deepStrictEqual([{reg_number:'CY 125478'}], await taxiTrips.findTaxisForRegion(1));
-    //     // assert.deepStrictEqual([{reg_number:'NUZ 125478'}], await taxiTrips.findTaxisForRegion(1));
+    ], await taxiTrips.findTaxisForRegion(3));
+        // assert.deepStrictEqual([{reg_number:'CY 125478'}], await taxiTrips.findTaxisForRegion(1));
+        // assert.deepStrictEqual([{reg_number:'NUZ 125478'}], await taxiTrips.findTaxisForRegion(1));
 
-    // })
+    })
 
     it('should find all the trips for a reg number', async function () {
 
