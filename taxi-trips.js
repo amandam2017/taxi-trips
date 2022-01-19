@@ -24,7 +24,7 @@ module.exports = function TaxiTrips(pool) {
 
     const findTripsByRegion = async(regionID)=>{
         let tripsByRegion = await pool.query('SELECT * FROM trip join taxi on taxi.id = trip.taxi_id WHERE region_id = $1', [regionID]);
-        return tripsByRegion.rowCount;
+        return tripsByRegion.rows;
 
     }
 
