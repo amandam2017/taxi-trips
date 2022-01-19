@@ -13,9 +13,18 @@ module.exports = function TaxiTrips(pool) {
     }
 
     const findTaxisForRegion = async(regionID) =>{
-        var taxisForRegion = await pool.query('SELECT reg_number from taxi WHERE region_id = $1', [regionID]);
-        return taxisForRegion.rows;
+        var taxisForRegion = await pool.query('SELECT * from taxi');
+        const regionTaxis = [];
+        taxisForRegion.rows.forEach(function(regionTaxi){
+            regionTaxis.push(regionTaxi.reg_number)
+        });
+        return regionTaxis;
     }
+
+    // const findTaxisForRegion = async(regionID) =>{
+    //     var taxisForRegion = await pool.query('SELECT reg_number from taxi WHERE region_id = $1', [regionID]);
+    //     return taxisForRegion.rows;
+    // }
 
     const findTripsByRegNumber = async(reg)=>{
         var tripsByReg = await pool.query('SELECT * from trip join taxi on taxi.id = trip.taxi_id WHERE reg_number = $1', [reg]);
